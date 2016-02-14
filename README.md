@@ -1,0 +1,2 @@
+# FastDevelopKit
+quickly for develop
