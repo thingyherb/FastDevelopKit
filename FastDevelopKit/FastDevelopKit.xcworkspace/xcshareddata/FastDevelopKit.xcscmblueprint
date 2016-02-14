@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "95e4e443-8869-bc49-a673-8bcffe6016a0++6707",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "95e4e443-8869-bc49-a673-8bcffe6016a0++6707" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "95e4e443-8869-bc49-a673-8bcffe6016a0++6707" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EA06754F-B56C-42F6-ACE3-D6B8E73037E7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "95e4e443-8869-bc49-a673-8bcffe6016a0++6707" : "FastDevelopKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FastDevelopKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/FastDevelopKit\/FastDevelopKit.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn-taoche.tech.bitauto.com\/svn\/taoche_ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95e4e443-8869-bc49-a673-8bcffe6016a0++6707"
+    }
+  ]
+}
