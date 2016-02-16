@@ -15,6 +15,8 @@
 		FEFDE6041C60920400AF1B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEFDE6031C60920400AF1B4D /* Assets.xcassets */; };
 		FEFDE6071C60920400AF1B4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFDE6051C60920400AF1B4D /* LaunchScreen.storyboard */; };
 		FEFDE61B1C60996E00AF1B4D /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFDE61A1C60996E00AF1B4D /* ApiRequest.m */; };
+		FEFE63791C72AD64006E7F5B /* FDChoiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFE63781C72AD64006E7F5B /* FDChoiceButton.m */; };
+		FEFE637F1C72B12F006E7F5B /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFE637E1C72B12F006E7F5B /* UIImage+Extend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		6FBE09838DD051A0EA27BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EED89247A22839C259BE0887 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FE53444F1C60A55000237316 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FEBCA2831C72B4BF00397B95 /* FDExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDExtend.h; sourceTree = "<group>"; };
 		FEFDE5F41C60920400AF1B4D /* FastDevelopKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastDevelopKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEFDE5F81C60920400AF1B4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEFDE5FA1C60920400AF1B4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +42,11 @@
 		FEFDE61A1C60996E00AF1B4D /* ApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiRequest.m; sourceTree = "<group>"; };
 		FEFDE61C1C609A1700AF1B4D /* FastDevelopKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastDevelopKit.h; sourceTree = "<group>"; };
 		FEFDE61D1C60A0C100AF1B4D /* DebugConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugConfig.h; sourceTree = "<group>"; };
+		FEFE63771C72AD64006E7F5B /* FDChoiceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDChoiceButton.h; sourceTree = "<group>"; };
+		FEFE63781C72AD64006E7F5B /* FDChoiceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDChoiceButton.m; sourceTree = "<group>"; };
+		FEFE637A1C72AD92006E7F5B /* FDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTools.h; sourceTree = "<group>"; };
+		FEFE637D1C72B12F006E7F5B /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
+		FEFE637E1C72B12F006E7F5B /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +124,12 @@
 		FEFDE60E1C60943800AF1B4D /* FastDevelopKit */ = {
 			isa = PBXGroup;
 			children = (
-				FE53444F1C60A55000237316 /* README.md */,
 				FEFDE61C1C609A1700AF1B4D /* FastDevelopKit.h */,
-				FEFDE6181C6098DB00AF1B4D /* Net */,
 				FEFDE60F1C6094ED00AF1B4D /* Define */,
+				FEFE637B1C72B12F006E7F5B /* Extend */,
+				FEFDE6181C6098DB00AF1B4D /* Net */,
+				FE53444F1C60A55000237316 /* README.md */,
+				FEFE63751C72AD64006E7F5B /* Tools */,
 			);
 			path = FastDevelopKit;
 			sourceTree = "<group>";
@@ -142,6 +152,42 @@
 				FEFDE61A1C60996E00AF1B4D /* ApiRequest.m */,
 			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		FEFE63751C72AD64006E7F5B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FEFE637A1C72AD92006E7F5B /* FDTools.h */,
+				FEFE63761C72AD64006E7F5B /* ChioiceButton */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		FEFE63761C72AD64006E7F5B /* ChioiceButton */ = {
+			isa = PBXGroup;
+			children = (
+				FEFE63771C72AD64006E7F5B /* FDChoiceButton.h */,
+				FEFE63781C72AD64006E7F5B /* FDChoiceButton.m */,
+			);
+			path = ChioiceButton;
+			sourceTree = "<group>";
+		};
+		FEFE637B1C72B12F006E7F5B /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				FEBCA2831C72B4BF00397B95 /* FDExtend.h */,
+				FEFE637C1C72B12F006E7F5B /* UIImage */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		FEFE637C1C72B12F006E7F5B /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				FEFE637D1C72B12F006E7F5B /* UIImage+Extend.h */,
+				FEFE637E1C72B12F006E7F5B /* UIImage+Extend.m */,
+			);
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +315,8 @@
 				FEFDE5FC1C60920400AF1B4D /* AppDelegate.m in Sources */,
 				FEFDE61B1C60996E00AF1B4D /* ApiRequest.m in Sources */,
 				FEFDE5F91C60920400AF1B4D /* main.m in Sources */,
+				FEFE63791C72AD64006E7F5B /* FDChoiceButton.m in Sources */,
+				FEFE637F1C72B12F006E7F5B /* UIImage+Extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
