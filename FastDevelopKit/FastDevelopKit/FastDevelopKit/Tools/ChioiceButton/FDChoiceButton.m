@@ -8,6 +8,7 @@
 
 #import "FDChoiceButton.h"
 #import "FontConfig.h"
+#import <Masonry.h>
 
 @implementation FDChoiceButton
 
@@ -47,6 +48,35 @@ static NSMutableArray      *unSelectedArray;
         self.sTitle = title;
         self.sTitleColor = titleColor;
     }
+    
+    [self.tLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(self.mas_top);
+        make.bottom.equalTo(self.mas_bottom);
+        make.left.equalTo(self.mas_left);
+        make.right.equalTo(self.mas_right);
+    }];
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth
+           borderColor:(UIColor *)borderColor
+              forState:(UIControlState)state {
+    
+    self.layer.masksToBounds = true;
+    
+    if (state == UIControlStateNormal) {
+        
+        self.nBorderWidth = borderWidth;
+        self.nBorderColor = borderColor;
+        
+        self.layer.borderWidth = self.nBorderWidth;
+        self.layer.borderColor = self.nBorderColor.CGColor;
+
+    } else {
+        
+        self.sBorderWidth = borderWidth;
+        self.sBorderColor = borderColor;
+    }
 }
 
 + (instancetype)buttonWithFrame:(CGRect)frame
@@ -74,6 +104,7 @@ static NSMutableArray      *unSelectedArray;
     button.index           = index;
     button.groupId         = groupId;
     button.statusType      = FDChoiceButtonStatusTypeUnselected;
+    
     NSString *imageKey = [NSString stringWithFormat:@"%@_%lu",groupId,(unsigned long)index];
     if (normalImage) {
         [button setImage:normalImage forState:UIControlStateNormal];
@@ -116,14 +147,35 @@ static NSMutableArray      *unSelectedArray;
                 
                 [self setImage:selectedImageDict[imageKey] forState:UIControlStateNormal];
             }
-        }else {
+            
+            if (self.sBorderWidth && self.sBorderColor) {
+                
+                self.layer.borderWidth = self.sBorderWidth;
+                self.layer.borderColor = self.sBorderColor.CGColor;
+                
+            } else {
+                
+                if (self.nBorderWidth && self.nBorderColor) {
+                    
+                    self.layer.borderWidth = self.nBorderWidth;
+                    self.layer.borderColor = self.nBorderColor.CGColor;
+                }
+            }
+            
+            
+        } else {
             
             if (normalImageDict[imageKey]) {
                 
                 [self setImage:normalImageDict[imageKey] forState:UIControlStateNormal];
             }
+            
+            if (self.nBorderWidth && self.nBorderColor) {
+                
+                self.layer.borderWidth = self.nBorderWidth;
+                self.layer.borderColor = self.nBorderColor.CGColor;
+            }
         }
-        
     }
     _statusType = statusType;
 

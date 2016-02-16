@@ -38,10 +38,16 @@ typedef enum {
 @property (nonatomic, assign) FDChoiceButtonStatusType statusType;
 @property (nonatomic, assign) FDChoiceType             choiceType;
 
-@property (nonatomic, copy) NSString    *nTitle;
-@property (nonatomic, strong) UIColor   *nTitleColor;
-@property (nonatomic, copy) NSString    *sTitle;
-@property (nonatomic, strong) UIColor   *sTitleColor;
+@property (nonatomic, copy  ) NSString   *nTitle;
+@property (nonatomic, strong) UIColor    *nTitleColor;
+@property (nonatomic, assign) CGFloat    nBorderWidth;
+@property (nonatomic, strong) UIColor    *nBorderColor;
+
+
+@property (nonatomic, copy  ) NSString   *sTitle;
+@property (nonatomic, strong) UIColor    *sTitleColor;
+@property (nonatomic, assign) CGFloat    sBorderWidth;
+@property (nonatomic, strong) UIColor    *sBorderColor;
 
 @property (nonatomic, strong) UILabel   *tLabel;
 
@@ -59,8 +65,12 @@ typedef enum {
       titleColor:(UIColor *)titleColor
         forState:(UIControlState)state;
 
+- (void)setBorderWidth:(CGFloat)borderWidth
+           borderColor:(UIColor *)borderColor
+              forState:(UIControlState)state;
 
 @end
+
 
 
 
