@@ -28,9 +28,9 @@
     
     NSArray * array = @[@"1", @"2"];
     
-    $Try
+    $try
     DLog(@"%@", array[10]);
-    $Catch
+    $catch
     
     NSArray *titleArray = @[@"First", @"Second", @"Third"];
     CGFloat width = 100;

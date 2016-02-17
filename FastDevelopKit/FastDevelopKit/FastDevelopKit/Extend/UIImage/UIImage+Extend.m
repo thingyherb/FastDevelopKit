@@ -41,7 +41,7 @@
 {
     UIGraphicsBeginImageContext(rect.size);
     
-    $Try
+    $try
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // translated rectangle for drawing sub image
@@ -53,7 +53,7 @@
     
     // draw image
     [image drawInRect:drawRect];
-    $Catch
+    $catch
     
     // grab image
     UIImage* croppedImage = UIGraphicsGetImageFromCurrentImageContext();
