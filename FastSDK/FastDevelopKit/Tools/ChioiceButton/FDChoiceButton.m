@@ -193,11 +193,14 @@ static NSMutableArray      *unSelectedArray;
         self.selected   = YES;
         [unSelectedArray removeObject:self];
         [selectedArray addObject:self];
-
+        
+        // perform delegate method
         if ([self.delegate respondsToSelector:
-             @selector(FDChoiceButtonSelectedAtIndex:inGroup:)]) {
+             @selector(fdChoiceButton:selectedAtIndex:inGroup:)]) {
             
-            [self.delegate FDChoiceButtonSelectedAtIndex:self.index inGroup:self.groupId];
+            [self.delegate fdChoiceButton:self
+                          selectedAtIndex:self.index
+                                  inGroup:self.groupId];
         }
         
     } else if (_statusType == FDChoiceButtonStatusTypeUnselected){
