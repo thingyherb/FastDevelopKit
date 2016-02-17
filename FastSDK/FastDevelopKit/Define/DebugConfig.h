@@ -19,9 +19,9 @@
 #endif
 
 /** exception */
-#define $Try    @try {
+#define $try    @try {
 
-#define $Catch    }\
+#define $catch    }\
 @catch (NSException *exception) {\
 NSString *exceptionInfo = [NSString stringWithFormat:@"exception = %@\n Class = %@\n SEL = %@\n ",exception,self,NSStringFromSelector(_cmd)];\
 DLog(@"%@",exceptionInfo);\

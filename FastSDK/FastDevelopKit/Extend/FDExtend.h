@@ -11,4 +11,7 @@
 
 #import "UIImage+Extend.h"
 
+#import "CALayer+XibConfiguration.h"
+
+
 #endif /* FDExtend_h */
