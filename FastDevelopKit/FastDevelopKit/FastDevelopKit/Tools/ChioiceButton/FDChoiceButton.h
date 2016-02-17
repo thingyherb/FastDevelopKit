@@ -22,21 +22,16 @@ typedef enum {
     
 }FDChoiceType;
 
-@protocol FDChoiceButtonDelegate <NSObject>
 
-@optional
--(void)FDChoiceButtonSelectedAtIndex:(NSUInteger)index inGroup:(NSString*)groupId;
-//-(void)FDChoiceButtonCancelAtIndex:(NSUInteger)index inGroup:(NSString*)groupId;
-
-@end
+@protocol FDChoiceButtonDelegate;
 
 @interface FDChoiceButton : UIButton
 
-@property (nonatomic, strong) NSString                 *groupId;
-@property (nonatomic, assign) NSUInteger               index;
-@property (nonatomic, assign) id<FDChoiceButtonDelegate  > delegate;
-@property (nonatomic, assign) FDChoiceButtonStatusType statusType;
-@property (nonatomic, assign) FDChoiceType             choiceType;
+@property (nonatomic, strong) NSString                      *groupId;
+@property (nonatomic, assign) NSUInteger                    index;
+@property (nonatomic, assign) id <FDChoiceButtonDelegate>   delegate;
+@property (nonatomic, assign) FDChoiceButtonStatusType      statusType;
+@property (nonatomic, assign) FDChoiceType                  choiceType;
 
 @property (nonatomic, copy  ) NSString   *nTitle;
 @property (nonatomic, strong) UIColor    *nTitleColor;
@@ -71,8 +66,17 @@ typedef enum {
 
 @end
 
+/**
+ *  FDChoiceButtonDelegate
+ */
+@protocol FDChoiceButtonDelegate <NSObject>
 
+@optional
+- (void)fdChoiceButton:(FDChoiceButton *)fdChoiceButton
+       selectedAtIndex:(NSUInteger)index
+               inGroup:(NSString*)groupId;
 
+@end
 
 
 

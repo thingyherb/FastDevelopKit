@@ -84,11 +84,13 @@
 
 #pragma mark - FDChoiceButtonDelegate
 
-- (void)FDChoiceButtonSelectedAtIndex:(NSUInteger)index inGroup:(NSString *)groupId {
+- (void)fdChoiceButton:(FDChoiceButton *)fdChoiceButton
+       selectedAtIndex:(NSUInteger)index
+               inGroup:(NSString *)groupId {
     
     if ([groupId isEqualToString:FDChoiceButtonDemo]) {
         
-        DLog(@"FDChoiceButton%lu say : I'm selected ! ", index);
+        DLog(@"%@ say : MY groupId is %@, And my title is %@ ", fdChoiceButton, fdChoiceButton.groupId, fdChoiceButton.nTitle);
     }
 }
 
