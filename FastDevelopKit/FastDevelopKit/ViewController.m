@@ -78,9 +78,36 @@
             choiceButton.statusType = FDChoiceButtonStatusTypeSelected;
         }
     }
-    
+
 }
 
+#pragma mark - request data
+
+- (void)requestData {
+    
+    NSDictionary *parameters = @{@"mobile":@"18911111111",
+                                 @"password":@"qqqqqq",
+                                 @"identity":@(2)};
+
+    [FDToast showWithStatus:@"登录中"];
+    [ApiRequest requestUseGetMethodWithURLString:@"http://domain/login" parameters:parameters completionHandler:^(BOOL success, NSError *error, NSDictionary *dict) {
+        
+
+        if (success) {
+            
+            [FDToast showImage:nil status:@"登录成功"];
+
+            DLog(@"dict = %@", dict);
+            
+        } else {
+
+            [FDToast showImage:nil status:@"登录失败"];
+
+            DLog(@"error = %@", error);
+        }
+
+    }];
+}
 
 #pragma mark - FDChoiceButtonDelegate
 
@@ -91,8 +118,13 @@
     if ([groupId isEqualToString:FDChoiceButtonDemo]) {
         
         DLog(@"%@ say : MY groupId is %@, And my title is %@ ", fdChoiceButton, fdChoiceButton.groupId, fdChoiceButton.nTitle);
+        
+        // request data from net
+        [self requestData];
     }
 }
+
+
 
 #pragma mark - didReceiveMemoryWarning
 

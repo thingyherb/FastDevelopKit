@@ -18,6 +18,7 @@
 		FEFDE61B1C60996E00AF1B4D /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFDE61A1C60996E00AF1B4D /* ApiRequest.m */; };
 		FEFE63791C72AD64006E7F5B /* FDChoiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFE63781C72AD64006E7F5B /* FDChoiceButton.m */; };
 		FEFE637F1C72B12F006E7F5B /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFE637E1C72B12F006E7F5B /* UIImage+Extend.m */; };
+		FEFFFF631C7D47EA0051DBAD /* FDToast.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFFFF621C7D47EA0051DBAD /* FDToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		FEFE637A1C72AD92006E7F5B /* FDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTools.h; sourceTree = "<group>"; };
 		FEFE637D1C72B12F006E7F5B /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
 		FEFE637E1C72B12F006E7F5B /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
+		FEFFFF611C7D47EA0051DBAD /* FDToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDToast.h; sourceTree = "<group>"; };
+		FEFFFF621C7D47EA0051DBAD /* FDToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FEFE637A1C72AD92006E7F5B /* FDTools.h */,
+				FEFFFF601C7D47D70051DBAD /* FDToast */,
 				FEFE63761C72AD64006E7F5B /* ChioiceButton */,
 			);
 			path = Tools;
@@ -201,6 +205,15 @@
 				FEFE637E1C72B12F006E7F5B /* UIImage+Extend.m */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		FEFFFF601C7D47D70051DBAD /* FDToast */ = {
+			isa = PBXGroup;
+			children = (
+				FEFFFF611C7D47EA0051DBAD /* FDToast.h */,
+				FEFFFF621C7D47EA0051DBAD /* FDToast.m */,
+			);
+			path = FDToast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8989DE1C743D130069972E /* CALayer+XibConfiguration.m in Sources */,
+				FEFFFF631C7D47EA0051DBAD /* FDToast.m in Sources */,
 				FEFDE5FF1C60920400AF1B4D /* ViewController.m in Sources */,
 				FEFDE5FC1C60920400AF1B4D /* AppDelegate.m in Sources */,
 				FEFDE61B1C60996E00AF1B4D /* ApiRequest.m in Sources */,
