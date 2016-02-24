@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
  
          s.dependency 'AFNetworking','~> 3.0.4' 
          s.dependency 'Masonry','~> 0.6.4' 
-         s.dependency 'SVProgressHUD',''~> 2.0-beta8''
+         s.dependency 'SVProgressHUD', '~> 2.0-beta8'
          s.dependency 'MJRefresh','~> 3.1.0'
          s.dependency 'SDWebImage','~> 3.7.5'
 
