@@ -21,6 +21,7 @@
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    [(AFHTTPResponseSerializer *)manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES]];
     
     NSURLRequest *request = nil;
     
