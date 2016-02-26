@@ -127,13 +127,22 @@
     
     if (data.length > byte) {
         
-        data = UIImageJPEGRepresentation(newImage, 0.5);
-
+        double scale = (double)byte/data.length;
+        
+        data = UIImageJPEGRepresentation(image, scale);
+        
         newImage = [UIImage imageWithData:data];
         
         if (data.length > byte) {
             
-            newImage = [self compress:newImage toByte:byte];
+            newImage = [self compressImage:newImage size:newImage.size];
+            
+            data = UIImageJPEGRepresentation(image, scale);
+            
+            if (data.length > byte) {
+                
+                [self compress:newImage toByte:byte];
+            }
         }
         
     } else {
