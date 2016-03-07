@@ -12,5 +12,6 @@
 
 #import "FDChoiceButton.h"
 #import "FDToast.h"
+#import "OtherTools.h"
 
 #endif /* FDTools_h */

@@ -70,7 +70,7 @@
         [choiceButton setTitle:title
                     titleColor:Color_16(0x08b5f4)
                       forState:UIControlStateSelected];
-        
+
         [self.view addSubview:choiceButton];
         
         if (i == 0) {

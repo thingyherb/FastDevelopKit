@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
          s.name            = "FastSDK"
-         s.version         = "0.1"
+         s.version         = "0.2"
          s.summary         = "fast develop sdk"
          s.homepage        = 'https://github.com/zhaomy/FastDevelopKit/wiki'
          s.license         = 'MIT'

@@ -9,7 +9,9 @@
 #ifndef FDExtend_h
 #define FDExtend_h
 
+#import "NSString+Extend.h"
 #import "UIImage+Extend.h"
+#import "NSAttributedString+Extend.h"
 
 #import "CALayer+XibConfiguration.h"
 

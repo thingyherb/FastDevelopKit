@@ -27,4 +27,34 @@
 + (UIImage *)compress:(UIImage *)image toByte:(NSUInteger)byte; // 不改变图片大小
 
 
+#pragma mark - 图片处理
+
+// 往图片上添加文字 会改变等比放大原有图片的大小 高清
++ (UIImage *)addTextChange:(NSString *)text
+                  withFont:(UIFont *)font
+                  fontSize:(int)fontSize
+                     color:(UIColor *)color
+                     point:(CGPoint)point
+                   toImage:(UIImage *)image;
+
+// 往图片上添加文字 不会改变原有图片的大小
++ (UIImage *)addText:(NSString *)text
+            withFont:(UIFont *)font
+            fontSize:(int)fontSize
+               color:(UIColor *)color
+               point:(CGPoint)point
+             toImage:(UIImage *)image;
+
+// 将view转为图片
++ (UIImage *)imageCreateFromView:(UIView *)view;
+
+
 @end
+
+
+
+
+
+
+
+

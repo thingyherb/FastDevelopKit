@@ -8,6 +8,7 @@
 
 #import "UIImage+Extend.h"
 #import "DebugConfig.h"
+#import "NSString+Extend.h"
 
 @implementation UIImage (Extend)
 
@@ -152,6 +153,122 @@
     
     return newImage;
 }
+
+#pragma mark - 图片处理
+
+// 往图片上添加文字 会改变等比放大原有图片的大小 高清
++ (UIImage *)addTextChange:(NSString *)text
+                  withFont:(UIFont *)font
+                  fontSize:(int)fontSize
+                     color:(UIColor *)color
+                     point:(CGPoint)point
+                   toImage:(UIImage *)image
+{
+    if (!text
+        ||!font
+        || !color
+        || !text
+        || text.length == 0
+        || [text containsStringExtend:@"null"]) {
+        
+        return image;
+    }
+    
+    $try
+    int scale = 4;
+    CGSize size             = CGSizeMake(image.size.width*scale, image.size.height*scale);// 设置上下文（画布）大小
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale); // 创建一个基于位图的上下文(context)，并将其设置为当前上下文
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();// 获取当前上下文
+    CGContextSetAllowsAntialiasing(contextRef, YES);// 开启抗锯齿
+    CGContextTranslateCTM(contextRef, 0, size.height); // 画布的高度
+    CGContextScaleCTM(contextRef, 1.0, -1.0); // 画布翻转
+    CGContextDrawImage(contextRef, CGRectMake(0, 0, size.width, size.height), image.CGImage); // 在上下文种画当前图片
+    if (!color) {
+        color = [UIColor clearColor];
+    }
+    [color set]; // 上下文种的文字颜色
+    CGContextTranslateCTM(contextRef, 0, size.height);
+    CGContextScaleCTM(contextRef, 1.0, -1.0);
+    UIFont *font_new = [UIFont fontWithName:font.fontName size:fontSize*scale];
+    
+    NSDictionary *atdic = @{NSForegroundColorAttributeName : color,
+                            NSFontAttributeName : font_new};
+    
+    [text drawAtPoint:CGPointMake(point.x*scale, point.y*scale) withAttributes:atdic];
+    
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext(); // 从当前上下文种获取图片
+    UIGraphicsEndImageContext(); // 移除栈顶的基于当前位图的图形上下文。
+    
+    return resultImage;
+    $catch
+    
+    return nil;
+}
+
+// 往图片上添加文字 不会改变原有图片的大小
++ (UIImage *)addText:(NSString *)text
+            withFont:(UIFont *)font
+            fontSize:(int)fontSize
+               color:(UIColor *)color
+               point:(CGPoint)point
+             toImage:(UIImage *)image
+{
+    if (!text
+        ||!font
+        || !color
+        || text.length == 0
+        || [text containsStringExtend:@"null"]) {
+        
+        return image;
+    }
+    
+    $try
+    CGSize size             = CGSizeMake(image.size.width, image.size.height);// 设置上下文（画布）大小
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale); // 创建一个基于位图的上下文(context)，并将其设置为当前上下文
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();// 获取当前上下文
+    CGContextTranslateCTM(contextRef, 0, size.height); // 画布的高度
+    CGContextScaleCTM(contextRef, 1.0, -1.0); // 画布翻转
+    CGContextDrawImage(contextRef, CGRectMake(0, 0, size.width, size.height), image.CGImage); // 在上下文种画当前图片
+    if (!color) {
+        color = [UIColor clearColor];
+    }
+    [color set]; // 上下文种的文字颜色
+    CGContextTranslateCTM(contextRef, 0, size.height);
+    CGContextScaleCTM(contextRef, 1.0, -1.0);
+    
+    UIFont *font_new = [UIFont fontWithName:font.fontName size:fontSize];
+    
+    NSDictionary *atdic = @{NSForegroundColorAttributeName : color,
+                            NSFontAttributeName : font_new};
+    
+    [text drawAtPoint:CGPointMake(point.x, point.y) withAttributes:atdic];
+    
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext(); // 从当前上下文种获取图片
+    UIGraphicsEndImageContext(); // 移除栈顶的基于当前位图的图形上下文。
+    
+    return resultImage;
+    $catch
+    
+    return nil;
+}
+
+// 将view转为图片
++ (UIImage *)imageCreateFromView:(UIView *)view
+{
+    $try
+    CGSize s = view.bounds.size;
+    // 第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
+    UIGraphicsBeginImageContextWithOptions(s, NO, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+    $catch
+    
+    return nil;
+}
+
 
 
 @end
