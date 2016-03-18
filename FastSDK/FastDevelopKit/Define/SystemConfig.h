@@ -42,11 +42,11 @@
 
 #define IOS_11_Or_Later  ([IOS_Version doubleValue] >= 11)
 #define IOS_10_Or_Later  ([IOS_Version doubleValue] >= 10)
-#define IOS_9_Or_Later   (IOS_Version >= @"9")
-#define IOS_8_Or_Later   (IOS_Version >= @"8")
-#define IOS_7_Or_Later   (IOS_Version >= @"7")
-#define IOS_6_Or_Later   (IOS_Version >= @"6")
-#define IOS_5_Or_Later   (IOS_Version >= @"5")
+#define IOS_9_Or_Later   ([IOS_Version compare:@"9"] >= 0)
+#define IOS_8_Or_Later   ([IOS_Version compare:@"8"] >= 0)
+#define IOS_7_Or_Later   ([IOS_Version compare:@"7"] >= 0)
+#define IOS_6_Or_Later   ([IOS_Version compare:@"6"] >= 0)
+#define IOS_5_Or_Later   ([IOS_Version compare:@"5"] >= 0)
 
 #endif /* SystemConfig_h */
 

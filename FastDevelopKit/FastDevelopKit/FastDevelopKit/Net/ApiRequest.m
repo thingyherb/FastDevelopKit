@@ -23,7 +23,7 @@
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     [(AFHTTPResponseSerializer *)manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES]];
     
-    NSURLRequest *request = nil;
+    NSMutableURLRequest *request = nil;
     
     if (method == APIRequestGetMethod) {
         
@@ -40,6 +40,8 @@
                                                                     error:nil];
     }
     
+    request.timeoutInterval = 15;
+    
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         if (error) {
@@ -49,6 +51,7 @@
         } else {
             
             apiCompletionHandler(true, error, responseObject);
+            
         }
     }];
     
